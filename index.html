@@ -38,6 +38,13 @@
         Autodesk.Viewing.Initializer(options, function onInitialized(){
             Autodesk.Viewing.Document.load(documentId, onDocumentLoadSuccess, onDocumentLoadFailure);
         });
+        
+        /**
+         * Autodesk.Viewing.Document.load() failuire callback.
+         */
+        function onDocumentLoadFailure(viewerErrorCode) {
+            console.error('onDocumentLoadFailure() - errorCode:' + viewerErrorCode);
+        }
 
         /**
         * Autodesk.Viewing.Document.load() success callback.
